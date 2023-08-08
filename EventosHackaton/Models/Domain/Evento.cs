@@ -12,9 +12,9 @@ namespace EventosHackaton.Models.Domain
 
 		public string Local { get; set; }
 
-		public DateTime DataHoraInicio { get; set; }
+		public DateTime DataInicio { get; set; }
 
-		public DateTime DataHoraTermino { get; set; }
+		public DateTime HoraInicio { get; set; }
 
 		public byte TipoEvento { get; set; }
 
