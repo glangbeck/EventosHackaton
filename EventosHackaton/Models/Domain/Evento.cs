@@ -14,6 +14,8 @@ namespace EventosHackaton.Models.Domain
 
 		public DateTime DataHoraInicio { get; set; }
 
+		public DateTime DataHoraTermino { get; set; }
+
 		public byte TipoEvento { get; set; }
 
 		public int Anexo { get; set; }
