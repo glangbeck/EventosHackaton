@@ -4,17 +4,17 @@ namespace EventosHackaton.Models.Domain
 {
 	public class EventoApiModel
 	{
+		public int Id { get; set; }
+
 		public string Titulo { get; set; }
 
 		public string Descricao { get; set; }
 
 		public string Local { get; set; }
 
-		public DateTime Data { get; set; }
+		public DateTime DataInicio { get; set; }
 
 		public DateTime HoraInicio { get; set; }
-
-		public DateTime HoraTermino { get; set; }
 
 		public TipoEvento TipoEvento { get; set; }
 

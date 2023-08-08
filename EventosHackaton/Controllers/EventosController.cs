@@ -20,11 +20,27 @@ namespace EventosHackaton.Controllers
 			_eventoMapper = eventoMapper;
 		}
 
-		[HttpPost]
-		public ActionResult Cadastrar(EventoApiModel eventoApiModel)
+		[HttpPost("[action]")]
+		public ActionResult Listar()
+		{
+			return Ok(_eventoMapper.Map(_eventoService.Listar()));
+		}
+
+		[HttpPost("[action]")]
+		public ActionResult Cadastrar([FromBody] EventoApiModel eventoApiModel)
 		{
 			var evento = _eventoMapper.Map(eventoApiModel);
-			_eventoService.CadastrarEvento(evento);
+			var inclusao = _eventoService.Incluir(evento, out var mensagem);
+			//if (!inclusao) return 
+
+			return Ok();
+		}
+
+		[HttpPost("[action]")]
+		public ActionResult Atualizar([FromBody] EventoApiModel eventoApiModel)
+		{
+			var evento = _eventoMapper.Map(eventoApiModel);
+			var alteracao = _eventoService.Alterar(evento, out var mensagem);
 
 			return Ok();
 		}
