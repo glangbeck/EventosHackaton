@@ -1,4 +1,5 @@
 ﻿using EventosHackaton.Models.Domain;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 
@@ -6,10 +7,10 @@ namespace EventosHackaton.Infrastructure.Data
 {
     public interface IEventoRepositorio
     {
-        bool CadastrarEvento(Evento evento);
-        Evento GetEvento(string titulo);
-        List<Evento> GetEventos();
-        bool UpdateEvento(Evento evento);
-        bool DeleteEvento(Evento evento);
+        bool Cadastrar(Evento evento, out string message);
+        Evento GetByTitle(string titulo);
+        List<Evento> GetAll();
+        bool Update(Evento evento, out string message);
+        bool Delete(ObjectId objectId, out string message);
     }
 }

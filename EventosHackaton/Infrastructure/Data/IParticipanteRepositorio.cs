@@ -6,13 +6,13 @@ namespace EventosHackaton.Infrastructure.Data
 {
     public interface IParticipanteRepositorio
     {
-        bool CadastrarParticipante(Evento evento);
-        Participante GetParticipanteByName();
-        Participante GetParticipanteByCPF();
-        List<Participante> GetParticipantes();
-        bool GetSaldoEvento(ObjectId objectId);
-        bool UpdateSaldoEvento(ObjectId objectId);
-        bool UpdateParticipante(Evento evento);
-        bool DeleteParticipante(Evento evento);
+        bool Cadastrar(Evento evento, out string message);
+        Participante GetByName(string name);
+        Participante GetByCPF(string cpf);
+        List<Participante> GetAll();
+        bool GetSaldoEvento(ObjectId objectId, out string message);
+        bool UpdateSaldoEvento(ObjectId objectId, out string message);
+        bool Update(Evento evento, out string message);
+        bool Delete(Evento evento, out string message);
     }
 }
