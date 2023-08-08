@@ -1,4 +1,5 @@
-﻿using EventosHackaton.Models.Domain;
+﻿using EventosHackaton.Infrastructure.Mappers;
+using EventosHackaton.Models.Domain;
 using EventosHackaton.Services.Eventos.Interface;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -10,17 +11,22 @@ namespace EventosHackaton.Controllers
 	public class EventosController : ControllerBase
 	{
 		private readonly IEventoService _eventoService;
-		
+		private readonly IEventoMapper _eventoMapper;
 
-		public EventosController(IEventoService eventoService)
+
+		public EventosController(IEventoService eventoService, IEventoMapper eventoMapper)
 		{
 			_eventoService = eventoService;
+			_eventoMapper = eventoMapper;
 		}
 
 		[HttpPost]
-		public IEnumerable<Evento> Cadastrar(EventoApiModel eventoApiModel)
+		public ActionResult Cadastrar(EventoApiModel eventoApiModel)
 		{
-			return null;
+			var evento = _eventoMapper.Map(eventoApiModel);
+			_eventoService.CadastrarEvento(evento);
+
+			return Ok();
 		}
 	}
 }

@@ -11,8 +11,9 @@ namespace EventosHackaton.Services.Eventos
 
 		public void CadastrarEvento(Evento evento)
 		{
-			throw new NotImplementedException();
+			
 		}
-	}
 
+
+	}
 }

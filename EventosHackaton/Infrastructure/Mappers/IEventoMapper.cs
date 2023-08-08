@@ -4,6 +4,6 @@ namespace EventosHackaton.Infrastructure.Mappers
 {
 	public interface IEventoMapper
 	{
-		EventoApiModel Map(Evento evento);
+		Evento Map(EventoApiModel eventoApiModel);
 	}
 }
