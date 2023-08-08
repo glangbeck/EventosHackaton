@@ -1,10 +1,13 @@
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 
 namespace EventosHackaton.Models.Domain
 {
 	public class Evento
 	{
-		public int Id { get; set; }
+        [BsonId]
+        public ObjectId Id { get; set; }
 
 		public string Titulo { get; set; }
 
@@ -19,5 +22,10 @@ namespace EventosHackaton.Models.Domain
 		public byte TipoEvento { get; set; }
 
 		public int Anexo { get; set; }
-	}
+
+        public Evento()
+        {
+            this.Id = ObjectId.GenerateNewId();
+        }
+    }
 }
