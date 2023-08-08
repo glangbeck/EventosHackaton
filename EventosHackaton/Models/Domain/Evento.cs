@@ -1,6 +1,6 @@
 using System;
 
-namespace EventosHackaton
+namespace EventosHackaton.Models.Domain
 {
 	public class Evento
 	{
@@ -13,5 +13,9 @@ namespace EventosHackaton
 		public string Local { get; set; }
 
 		public DateTime DataHoraInicio { get; set; }
+
+		public byte TipoEvento { get; set; }
+
+		public int Anexo { get; set; }
 	}
 }

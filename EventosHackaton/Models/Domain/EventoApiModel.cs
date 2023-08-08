@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace EventosHackaton.Models.Domínio
+namespace EventosHackaton.Models.Domain
 {
 	public class EventoApiModel
 	{
@@ -18,5 +15,9 @@ namespace EventosHackaton.Models.Domínio
 		public DateTime HoraInicio { get; set; }
 
 		public DateTime HoraTermino { get; set; }
+
+		public byte TipoEvento { get; set; }
+
+		public int Anexo { get; set; }
 	}
 }

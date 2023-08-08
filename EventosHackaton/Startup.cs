@@ -1,3 +1,4 @@
+using EventosHackaton.Infrastructure.DI;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace EventosHackaton
 {
-	public class Startup
+    public class Startup
 	{
 		public Startup(IConfiguration configuration)
 		{
@@ -26,6 +27,7 @@ namespace EventosHackaton
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllers();
+			RepositorioServices.Configure(services);
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

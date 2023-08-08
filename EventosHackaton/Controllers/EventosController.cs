@@ -1,10 +1,7 @@
-﻿using EventosHackaton.Models.Domínio;
+﻿using EventosHackaton.Models.Domain;
+using EventosHackaton.Services.Eventos.Interface;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EventosHackaton.Controllers
 {
@@ -12,18 +9,18 @@ namespace EventosHackaton.Controllers
 	[Route("[controller]")]
 	public class EventosController : ControllerBase
 	{
-		private readonly ILogger<EventosController> _logger;
+		private readonly IEventoService _eventoService;
 		
 
-		public EventosController(ILogger<EventosController> logger)
+		public EventosController(IEventoService eventoService)
 		{
-			_logger = logger;
+			_eventoService = eventoService;
 		}
 
 		[HttpPost]
 		public IEnumerable<Evento> Cadastrar(EventoApiModel eventoApiModel)
 		{
-			
+			return null;
 		}
 	}
 }
