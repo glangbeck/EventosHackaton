@@ -19,5 +19,7 @@ namespace EventosHackaton.Models.Domain
 		public TipoEvento TipoEvento { get; set; }
 
 		public int Anexo { get; set; }
+
+		public int? LimitePessoas { get; set; }
 	}
 }

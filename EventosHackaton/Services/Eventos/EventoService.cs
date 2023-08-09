@@ -1,4 +1,5 @@
-﻿using EventosHackaton.Models.Domain;
+﻿using EventosHackaton.Infrastructure.Data;
+using EventosHackaton.Models.Domain;
 using EventosHackaton.Services.Eventos.Interface;
 using System;
 using System.Collections.Generic;
@@ -7,12 +8,16 @@ namespace EventosHackaton.Services.Eventos
 {
 	public class EventoService : IEventoService
 	{
-		public EventoService()
-		{}
+		private readonly IEventoRepositorio _eventoRepositorio;
+
+		public EventoService(IEventoRepositorio eventoRepositorio)
+		{
+			_eventoRepositorio = eventoRepositorio;
+		}
 
 		public List<Evento> Listar()
 		{
-			throw new NotImplementedException();
+			return _eventoRepositorio.GetEventos();
 		}
 
 		public Evento Obter(int codigo)

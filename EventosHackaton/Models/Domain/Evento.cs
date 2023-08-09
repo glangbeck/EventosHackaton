@@ -23,6 +23,8 @@ namespace EventosHackaton.Models.Domain
 
 		public int Anexo { get; set; }
 
+        public int LimitePessoas { get; set; }
+
         public Evento()
         {
             this.Id = ObjectId.GenerateNewId();
